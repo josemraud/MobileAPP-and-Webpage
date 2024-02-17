@@ -1,0 +1,37 @@
+{
+    "locationlist":[
+        "Honduras",
+        "Panamá",
+        "Nicaragua",
+        "El Salvador"
+    ],
+    "pricerangelist":[
+        "$60k - $80k",
+        "$80k - $100k",
+        "$100k - $120k",
+        "$120k - $140k",
+        "$140k - $160k",
+        "$160k - $180k",
+        "$180k - $200k"
+    ],
+    "bathroomslist":[
+       
+    ],
+    "bedslist":[
+       
+    ],
+    "statuslist":[
+       
+    ],
+    "typelist":[
+       "Casas",
+       "Apartamentos",
+       "Terrenos",
+       "Chalet",
+       "Bodegas",
+       "Locales",
+       "Condominios",
+       "Edificios",
+       "Oficinas"
+    ]
+}

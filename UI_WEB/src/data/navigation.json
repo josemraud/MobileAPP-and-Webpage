@@ -1,0 +1,76 @@
+[
+    {
+        "id": 1,
+        "linkText": "Inicio",
+        "child": false,
+       
+        "link": "/"
+    },
+    {
+        "id": 2,
+        "linkText": "Bienes",
+        "child": true,
+        "submenu": [
+            {
+                "id": 12,
+                "linkText": "Compra",
+                "link": "/listing-map"
+            },
+            {
+                "id": 13,
+                "linkText": "Renta",
+                "link": "/listing-maprent"
+            },
+            {
+                "id": 13,
+                "linkText": "Publicar",
+                "link": "/submit-listing"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "linkText": "Vehiculos",
+        "child": true,
+        "submenu": [
+            {
+                "id": 16,
+                "linkText": "Nuevos",
+                "link": "/listing-grid"
+            },
+            {
+                "id": 17,
+                "linkText": "Usados",
+                "link": "/listing-grid-used"
+            },
+            {
+                "id": 18,
+                "linkText": "Publicar",
+                "link": "/submit-listingvehiculos"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "linkText": "Preguntas Frecuentes",
+        "child": false,
+        "link": "/faq"
+    },{
+        "id": 5,
+        "linkText": "¿Quiénes Somos?",
+        "child": false,
+        "link": "/about"
+    },{
+        "id": 6,
+        "linkText": "Centro Localiza",
+        "child": false,
+        "link": "/coming-soon"
+    },
+    {
+        "id": 7,
+        "linkText": "Geo Localiza",
+        "child": false,
+        "link": "/geo-locator"
+    }
+   
+]

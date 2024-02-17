@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "icon": "tachometer-alt",
+        "title": "Balanceo",
+        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+        "id": 2,
+        "icon": "oil-can",
+        "title": "Cambio de aceite",
+        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+        "id": 3,
+        "icon": "clipboard",
+        "title": "Scanner",
+        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+        "id": 4,
+        "icon": "car",
+        "title": "Autolote",
+        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+        "id": 5,
+        "icon": "store",
+        "title": "Carwash",
+        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+        "id": 6,
+        "icon": "car-battery",
+        "title": "Baterías",
+        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    }
+]

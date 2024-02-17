@@ -1,0 +1,17 @@
+
+.watermark img {
+  width: 100%;
+}
+.watermark {
+  position: relative;
+}
+.watermark::after {
+  content: 'COPYRIGHT, YOU SHALL NOT STEAL!';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0.5;
+  font-size: 1.5em;
+}
+
+
