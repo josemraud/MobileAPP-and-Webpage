@@ -1,0 +1,6 @@
+framework module Pods_Pods_localiza_localizaTests {
+  umbrella header "Pods-Pods-localiza-localizaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

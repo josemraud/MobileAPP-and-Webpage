@@ -1,0 +1,6 @@
+framework module Pods_YogaKit {
+  umbrella header "Pods-YogaKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

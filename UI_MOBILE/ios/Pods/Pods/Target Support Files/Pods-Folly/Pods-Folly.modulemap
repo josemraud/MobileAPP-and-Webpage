@@ -1,0 +1,6 @@
+framework module Pods_Folly {
+  umbrella header "Pods-Folly-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,282 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'CocoaAsyncSocket' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for CocoaAsyncSocket
+
+end
+
+target 'DoubleConversion' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for DoubleConversion
+
+end
+
+target 'FBReactNativeSpec' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for FBReactNativeSpec
+
+end
+
+target 'Flipper' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Flipper
+
+end
+
+target 'Flipper-DoubleConversion' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Flipper-DoubleConversion
+
+end
+
+target 'Flipper-Folly' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Flipper-Folly
+
+end
+
+target 'Flipper-Glog' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Flipper-Glog
+
+end
+
+target 'Flipper-PeerTalk' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Flipper-PeerTalk
+
+end
+
+target 'Flipper-RSocket' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Flipper-RSocket
+
+end
+
+target 'FlipperKit' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for FlipperKit
+
+end
+
+target 'Folly' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Folly
+
+end
+
+target 'glog' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for glog
+
+end
+
+target 'Pods-localiza' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Pods-localiza
+
+end
+
+target 'Pods-localiza-localizaTests' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Pods-localiza-localizaTests
+
+end
+
+target 'Pods-localiza-tvOS' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Pods-localiza-tvOS
+
+end
+
+target 'Pods-localiza-tvOSTests' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Pods-localiza-tvOSTests
+
+end
+
+target 'RCTTypeSafety' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for RCTTypeSafety
+
+end
+
+target 'React-Core' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for React-Core
+
+end
+
+target 'React-Core-AccessibilityResources' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for React-Core-AccessibilityResources
+
+end
+
+target 'React-CoreModules' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for React-CoreModules
+
+end
+
+target 'React-cxxreact' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for React-cxxreact
+
+end
+
+target 'React-jsi' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for React-jsi
+
+end
+
+target 'React-jsiexecutor' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for React-jsiexecutor
+
+end
+
+target 'React-jsinspector' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for React-jsinspector
+
+end
+
+target 'React-RCTAnimation' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for React-RCTAnimation
+
+end
+
+target 'React-RCTBlob' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for React-RCTBlob
+
+end
+
+target 'React-RCTImage' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for React-RCTImage
+
+end
+
+target 'React-RCTLinking' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for React-RCTLinking
+
+end
+
+target 'React-RCTNetwork' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for React-RCTNetwork
+
+end
+
+target 'React-RCTSettings' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for React-RCTSettings
+
+end
+
+target 'React-RCTText' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for React-RCTText
+
+end
+
+target 'React-RCTVibration' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for React-RCTVibration
+
+end
+
+target 'ReactCommon' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for ReactCommon
+
+end
+
+target 'Yoga' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Yoga
+
+end
+
+target 'YogaKit' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for YogaKit
+
+end

@@ -1,0 +1,6 @@
+framework module Pods_Flipper_PeerTalk {
+  umbrella header "Pods-Flipper-PeerTalk-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_React_RCTAnimation {
+  umbrella header "Pods-React-RCTAnimation-umbrella.h"
+
+  export *
+  module * { export * }
+}

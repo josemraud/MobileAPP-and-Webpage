@@ -1,0 +1,6 @@
+module Pods_Localiza_LocalizaTests {
+  umbrella header "Pods-Localiza-LocalizaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

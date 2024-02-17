@@ -1,0 +1,6 @@
+framework module Pods_React_RCTLinking {
+  umbrella header "Pods-React-RCTLinking-umbrella.h"
+
+  export *
+  module * { export * }
+}

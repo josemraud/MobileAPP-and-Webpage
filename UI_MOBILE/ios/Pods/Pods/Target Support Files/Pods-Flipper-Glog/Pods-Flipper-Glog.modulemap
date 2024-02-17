@@ -1,0 +1,6 @@
+framework module Pods_Flipper_Glog {
+  umbrella header "Pods-Flipper-Glog-umbrella.h"
+
+  export *
+  module * { export * }
+}

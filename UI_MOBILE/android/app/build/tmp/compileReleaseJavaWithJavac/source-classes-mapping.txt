@@ -1,0 +1,9 @@
+com/localiza/MainActivity.java
+ com.applocaliza.MainActivity
+com/applocaliza/BuildConfig.java
+ com.applocaliza.BuildConfig
+com/localiza/MainApplication.java
+ com.applocaliza.MainApplication
+ com.applocaliza.MainApplication$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
