@@ -1,0 +1,142 @@
+# One ignore list for API, DB, UI_MOBILE, and UI_WEB.
+
+# --- Secrets and local config ---
+.env
+.env.*
+!.env.example
+local.properties
+*.pem
+*.pepk
+*.jks
+*.keystore
+!debug.keystore
+
+# --- OS junk ---
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+__MACOSX/
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# --- Editors and IDEs ---
+.idea/
+*.iml
+inspectionProfiles/
+workspace.xml
+misc.xml
+modules.xml
+vcs.xml
+.vscode/
+*.swp
+*~
+.project
+.classpath
+.settings/
+
+# --- Logs and coverage ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+coverage/
+.nyc_output/
+*.lcov
+
+# --- Python (API) ---
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+.venv/
+env/
+ENV/
+*.egg
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+htmlcov/
+instance/
+.webassets-cache
+
+# --- Node (UI_MOBILE and UI_WEB) ---
+node_modules/
+jspm_packages/
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.eslintcache
+.node_repl_history
+.stylelintcache
+
+# --- React web ---
+/UI_WEB/build/
+
+# --- React Native / Metro ---
+.expo/
+.expo-shared/
+web-build/
+dist/
+*.jsbundle
+*.bundle.map
+.metro-health-check*
+link-assets-manifest.json
+
+# --- Android ---
+**/.gradle/
+**/android/app/build/
+**/android/build/
+**/android/app/release/
+**/captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+*.hprof
+output-metadata.json
+
+# --- iOS / Xcode / CocoaPods ---
+**/Pods/
+**/ios/build/
+**/DerivedData/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.xcuserstate
+*.xcscmblueprint
+.xcode.env.local
+**/ios/undefined/
+
+# --- Buck ---
+buck-out/
+\.buckd/
+*.keystore.lck
+
+# --- Fastlane ---
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
