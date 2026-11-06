@@ -39,7 +39,7 @@ class Content extends Component {
                         <div className="acr-cs-text">
                             <h1 className="title">Centro <span className="custom-primary">Plaza</span> </h1>
                             <Services/>
-                             <p className="subtitle">Anillo Periférico, frente a Nacional de Ingenieros Coliseum, Tegucigalpa, Honduras.</p>
+                             <p className="subtitle">Avenida Central 100, Ciudad Demo.</p>
                         </div>
 
 
@@ -48,7 +48,7 @@ class Content extends Component {
               <div className="banner-map" style={{paddingLeft: '30px', paddingRight: '30px'}}>
                 <MapContainer
                   className="markercluster-map map"
-                  center={[14.0823733,-87.1597415]}
+                  center={[40.4168, -3.7038]}
                   zoom={15}
                 >
                   <TileLayer
@@ -57,7 +57,7 @@ class Content extends Component {
                   /> 
                     <Marker
                    
-                      position={[14.0823733,-87.1597415]}
+                      position={[40.4168, -3.7038]}
                       icon={customMarker}
                     
                     > 
@@ -94,8 +94,8 @@ class Content extends Component {
                         <div className="acr-cs-newsletter">
                             <p><span>Nuestro personal te brindará información</span></p>
                             <p className="subtitle">Correo: soporte@example.com</p>
-                            <p className="subtitle">Teléfono: +50422638712</p>
-                            <p className="subtitle">Celular: +50432763465</p>
+                            <p className="subtitle">Teléfono: +1 555 010 1000</p>
+                            <p className="subtitle">Celular: +1 555 010 2000</p>
                         </div>
                     </div>
                </div>

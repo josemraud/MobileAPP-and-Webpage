@@ -1,7 +1,5 @@
 # Plaza
 
-Plaza is a marketplace for real estate and vehicles in Honduras. People can browse, publish, and manage properties and cars from a website or a mobile app. Both clients talk to the same Flask API, which stores data in PostgreSQL.
-
 ## Repository layout
 
 | Folder | What it is |

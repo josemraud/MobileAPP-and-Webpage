@@ -16,7 +16,7 @@ class About extends Component {
                                 <h5 className="custom-primary">Nosotros</h5>
                                 <h2 className="title">Plaza, provee el mejor servicio relacionado a bienes y raices</h2>
                                 <p className="subtitle">
-                                Aplicación de servicios inmobiliarios y venta de vehículos, nace ante la imperiosa necesidad de brindar un servicio pronto, seguro y confiable a las personas que desean adquirir bienes inmuebles o vehículos en Honduras centralizando la información en su plataforma y otorgando numerosas opciones a sus usuarios capaces de vender o comprar desde un edificio, terreno o apartamento hasta un automóvil nuevo o usado a solo un click de distancia. 
+                                Aplicación de servicios inmobiliarios y venta de vehículos, nace ante la imperiosa necesidad de brindar un servicio pronto, seguro y confiable a las personas que desean adquirir bienes inmuebles o vehículos en la región centralizando la información en su plataforma y otorgando numerosas opciones a sus usuarios capaces de vender o comprar desde un edificio, terreno o apartamento hasta un automóvil nuevo o usado a solo un click de distancia. 
 
                                 </p>
                               

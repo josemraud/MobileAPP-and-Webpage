@@ -42,7 +42,7 @@ export default {
     'Phone': 'هاتف',
     'Email': 'البريد الإلكتروني',
     'Website': 'موقع الكتروني',
-    'Tegucigalpa, Honduras': 'بريستول ، إنجلترا',
+    'Ciudad Demo': 'مدينة تجريبية',
     'Beds': 'أسرة',
     'Baths': 'الحمامات',
     'Contact Agent': 'وكيل الاتصال',
@@ -56,7 +56,6 @@ export default {
 
     /* MemberHome */
     'Hey Kent Parker!': 'يا كينت باركر!',
-    'San Pedro Sula, Honduras': 'ليفربول ، المملكة المتحدة',
     'Properties': 'الخصائص',
     'Messages': 'الرسائل',
     'Profile': 'الملف الشخصي',
@@ -78,7 +77,6 @@ export default {
     'Your Email Address': 'عنوان بريدك الإلكتروني',
     'Your Website url': 'عنوان موقعك',
     'Kent Parker': 'كينت باركر',
-    'San Pedro Sula, Honduras': 'ليفربول ، المملكة المتحدة',
     'save': 'حفظ',
     'Save': 'حفظ',
 

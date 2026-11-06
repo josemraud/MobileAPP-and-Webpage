@@ -43,7 +43,7 @@ export default class extends React.Component {
               <Image source={require('@asset/images/avatar.png')} style={styles.avatar} />
               <View>
                 <Text style={styles.profileName}>{__('Bienvenido, Felipe Cantarero!')}</Text>
-                <Text style={styles.profileLocation}>{__('Tegucigalpa, Honduras')}</Text>
+                <Text style={styles.profileLocation}>{__('Ciudad Demo')}</Text>
               </View>
             </View>
             

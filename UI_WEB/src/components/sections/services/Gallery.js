@@ -25,7 +25,7 @@ class Gallery extends Component {
                         <h2 className="title">¿Qué es Plaza?</h2>
                         <p className="subtitle">
                          Aplicación de servicios inmobiliario y vehiculares que nace ante la imperiosa necesidad de brindar un espacio completo,
-                         seguro y de calidad a las personas que deseen comprar o vender sus propiedades en Honduras y la región,
+                         seguro y de calidad a las personas que deseen comprar o vender sus propiedades en la región,
                          otorgando numerosas opciones a nuestros usuarios al alcance de un click.
                         </p>
                         <Link to="https://www.youtube.com/watch?v=1EtA3xmNjuo" className="btn-custom popup-youtube"> <i className="m-0 fas fa-play" /> </Link>

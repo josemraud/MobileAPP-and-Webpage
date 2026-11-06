@@ -31,14 +31,14 @@ export default class extends React.Component {
                 <Icon name='map' type='FontAwesome5' style={styles.contactIcon} />
                 <View>
                   <Text style={styles.contactHeader}>{__('Ubicación').toUpperCase()}</Text>
-                  <Text style={styles.contactDesc}>Centro Plaza, Anillo Periférico{'\n'}Tegucigalpa, Honduras</Text>
+                  <Text style={styles.contactDesc}>Centro Plaza, Avenida Central 100{'\n'}Ciudad Demo</Text>
                 </View>
               </View>
               <View style={styles.contactItem}>
                 <Icon name='phone' type='FontAwesome' style={styles.contactIcon} />
                 <View>
                   <Text style={styles.contactHeader}>{__('Teléfono').toUpperCase()}</Text>
-                  <Text style={styles.contactDesc}>+504 2263-8712 / +504 3276-3465</Text>
+                  <Text style={styles.contactDesc}>+1 555 010 1000 / +1 555 010 2000</Text>
                 </View>
               </View>
               <View style={styles.contactItem}>

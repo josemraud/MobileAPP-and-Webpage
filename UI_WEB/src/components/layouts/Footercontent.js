@@ -23,7 +23,7 @@ class Footercontent extends Component {
                         <div className="col-lg-2 offset-md-1 col-md-4 col-sm-6 footer-widget">
                             <h5 className="widget-title">Contáctenos</h5>
                             <ul>
-                                <li> <a target = "blank" href="https://api.whatsapp.com/send?phone=+50432763465"><i className="fab fa-whatsapp" /> WhatsApp</a> </li>
+                                <li> <a href="#"><i className="fab fa-whatsapp" /> WhatsApp</a> </li>
                                 <li> <a href="mailto:soporte@example.com?Subject=Informacion"><i className="fas fa-envelope" /> Mail</a> </li>
                                 
                             </ul>

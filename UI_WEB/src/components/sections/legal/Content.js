@@ -62,9 +62,9 @@ Si PLAZA participa en una fusión, adquisición o venta de activos, nos asegurar
 </p>
 <p>1.6. FUERZA MAYOR: significa la producción de un hecho o circunstancia (caso de fuerza mayor o caso fortuito) que imposibilita o impide que una parte cumpla una o más de sus obligaciones contractuales de acuerdo con el contrato, en la medida en que la parte afectada por el impedimento pruebe: (a) que dicho impedimento está fuera de su control razonable; y (b) que los efectos del impedimento no podrían razonablemente haber sido evitados o superados por la parte afectada.
 </p>
-<p>1.7. PLAZA o el “RESPONSABLE”: PLAZA, una sociedad anónima, de naturaleza mercantil, del domicilio de Tegucigalpa, M. D. C., y todas las subsidiarias de los países en que opere en el futuro.
+<p>1.7. PLAZA o el “RESPONSABLE”: PLAZA, una sociedad anónima, de naturaleza mercantil, del domicilio de Ciudad Demo, y todas las subsidiarias de los países en que opere en el futuro.
 </p>
-<p>1.8. LEGISLACIÓN APLICABLE: Significa, el cuerpo normativo que regula todo lo relativo a la materia en Honduras y en cada país en donde llegue a operar PLAZA en el futuro.
+<p>1.8. LEGISLACIÓN APLICABLE: Significa, el cuerpo normativo que regula todo lo relativo a la materia en el país donde opere y en cada país en donde llegue a operar PLAZA en el futuro.
 </p>
 <p>1.9. PLATAFORMA: La plataforma PLAZA a la cual los CLIENTES y CONSUMIDORES podrán tener acceso a través del SITIO WEB y/o el APP con el fin de adquirir los PRODUCTOS y/o SERVICIOS que PLAZA y/o sus socios comerciales ofrezcan.
 </p>
