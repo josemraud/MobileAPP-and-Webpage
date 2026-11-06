@@ -29,7 +29,7 @@ class Agentsslider extends Component {
                                 <div className="acr-agent col-lg-6">
                                     <div className="acr-dots-wrapper acr-agent-thumb">
                                         <div className="acr-dots" />
-                                        <Link to="/agent-details"><img src={process.env.PUBLIC_URL + "/assets/img/localiza.png "} alt="agent" /></Link>
+                                        <Link to="/agent-details"><img src={process.env.PUBLIC_URL + "/assets/img/plaza.png "} alt="agent" /></Link>
                                     </div>
                                     <br></br>
                                     <div className="acr-agent-body">
@@ -42,7 +42,7 @@ class Agentsslider extends Component {
                                 <div className="acr-agent col-lg-6 ">
                                     <div className="acr-dots-wrapper acr-agent-thumb">
                                         <div className="acr-dots" />
-                                        <Link to="/agent-details"><img src={process.env.PUBLIC_URL + "/assets/img/localiza.png "} alt="agent" /></Link>
+                                        <Link to="/agent-details"><img src={process.env.PUBLIC_URL + "/assets/img/plaza.png "} alt="agent" /></Link>
                                     </div>
                                      <br></br>
                                     <div className="acr-agent-body">

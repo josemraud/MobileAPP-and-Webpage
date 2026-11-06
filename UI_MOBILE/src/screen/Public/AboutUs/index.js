@@ -27,7 +27,7 @@ export default class extends React.Component {
           </ImageBackground>
           <View style={styles.aboutContent}>
             <Text style={styles.aboutText}>
-              Localiza Technologies
+              Plaza
             {'\n\n'}Mauris dolor magna, sodales et finibus nec, feugiat nec enim. Nullam id arcu lacus.
           </Text>
           </View>

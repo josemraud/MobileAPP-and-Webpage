@@ -29,6 +29,7 @@ def get_all():
 
 # INI | Get All Countries ***********************************************************************
 @rol_api.route('/active', methods=['GET'])
+@Auth.auth_required
 def get_all_Active():
     query = TblRolModel.get_all_rol_activos()
     result = rol_schemas.dump(query)
@@ -55,7 +56,7 @@ def nuevoRol():
 
 # INI | Actualziar Rol
 @rol_api.route('/<int:id_rol>', methods=['PUT'])
-@Auth.auth_required
+@Auth.auth_admin
 def actualizarRol(id_rol):
     req_data = request.get_json()
     quote = TblRolModel.get_one_rol(id_rol)
@@ -69,7 +70,7 @@ def actualizarRol(id_rol):
 
 # Aqui arranca el metodo de actualizar el estado [ACTIVO|INACTIVO] del Rol
 @rol_api.route('/<string:id_rol>/state', methods=['PUT'])
-@Auth.auth_required
+@Auth.auth_admin
 def actualizaEstadoRol(id_rol):
     req_data = request.get_json()
     quote = TblRolModel.get_one_rol(id_rol)

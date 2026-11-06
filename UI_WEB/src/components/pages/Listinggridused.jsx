@@ -10,7 +10,7 @@ export const Listinggridused  = () => {
     return (
       <Fragment>
         <MetaTags>
-          <title>Localiza | Vehiculos Usados</title>
+          <title>Plaza | Vehiculos Usados</title>
           <meta name="description" content="#" />
         </MetaTags>
         <Header />

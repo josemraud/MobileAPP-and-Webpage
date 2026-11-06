@@ -77,7 +77,7 @@ export default class extends React.Component {
   render() {
     return (
       <Container style={theme.layoutFx}>
-        <Header statusBarType='dark' navLeftType='menu' navMiddleType='medium' title={__('Localiza')}/>
+        <Header statusBarType='dark' navLeftType='menu' navMiddleType='medium' title={__('Plaza')}/>
         <Content contentContainerStyle={theme.layout}>
           <View>
             <View style={styles.groupContainer}>

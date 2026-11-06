@@ -51,9 +51,9 @@ export const RegisterContent = () => {
   function sendEmail(e) {
     e.preventDefault();
     emailjs.send("service_ht0xjsb","template_gzp65n9",{
-      from_name: "Equipo Localiza",
+      from_name: "Equipo Plaza",
       to_name: nombre,
-      message: 'Hola'+nombre+'bienvenido a localiza, puedes seguir este enlace para confirmar tu correo'+' '+URI,
+      message: 'Hola'+nombre+'bienvenido a Plaza, puedes seguir este enlace para confirmar tu correo'+' '+URI,
       reply_to: correo,
       });
    
@@ -104,9 +104,9 @@ await userservice
       .then((resp) => {
         if (resp.code === 201) {
           emailjs.send("service_ht0xjsb","template_gzp65n9",{
-            from_name: "Equipo Localiza",
+            from_name: "Equipo Plaza",
             nombre: correo.toLowerCase().replace(/\s+/g, ''),
-            message: 'Hola '+nombre+' '+apellido+'bienvenido a localiza, puedes seguir este enlace para confirmar tu correo'+' '+'http://www.applocaliza.com/#/confirm'+'/'+resp.id_usuario,
+            message: 'Hola '+nombre+' '+apellido+'bienvenido a Plaza, puedes seguir este enlace para confirmar tu correo'+' '+'http://www.example.com/#/confirm'+'/'+resp.confirm_token,
             reply_to: correo.toLowerCase().replace(/\s+/g, ''),
             });
           Swal.fire("Se ha enviado el correo de confirmación!", resp.msg, "success");
@@ -199,7 +199,7 @@ const yearNavigatorTemplate = (e) => {
       <div className="acr-auth-content">
         <form>
           <div className="auth-text">
-            <h3>Crea una cuenta en Localiza</h3>
+            <h3>Crea una cuenta en Plaza</h3>
             <p>
             </p>
           </div>

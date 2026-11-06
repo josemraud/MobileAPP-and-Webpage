@@ -42,7 +42,7 @@ class Content extends Component {
                             variant="link"
                             eventKey="0"
                           >
-                          ¿Qué es Localiza App?
+                          ¿Qué es Plaza App?
                           </Accordion.Toggle>
                         </Card.Header>
                         
@@ -66,7 +66,7 @@ class Content extends Component {
                             variant="link"
                             eventKey="1"
                           >
-                           ¿Qué puedo hacer en Localiza?
+                           ¿Qué puedo hacer en Plaza?
                           </Accordion.Toggle>
                         </Card.Header>
                       </Card>

@@ -9,7 +9,7 @@ export const Submitlisting  = () => {
     return (
       <Fragment>
         <MetaTags>
-          <title>Localiza | Bienes</title>
+          <title>Plaza | Bienes</title>
           <meta name="description" content="#" />
         </MetaTags>
         <Header />

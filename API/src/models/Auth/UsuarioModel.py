@@ -29,7 +29,7 @@ class TblUserModel(db.Model):
     apellido = db.Column(db.String(50), nullable=True)
     correo = db.Column(db.String(50), nullable=True)
     telefono = db.Column(db.String(15), nullable=True)
-    password = db.Column(db.String(15), nullable=True)
+    password = db.Column(db.String(500), nullable=True)
     confirmado = db.Column(db.Boolean, default=False)
     activo = db.Column(db.Boolean, default=True)
     fecha_creacion = db.Column(db.Date, default=datetime.datetime.now())
@@ -63,10 +63,10 @@ class TblUserModel(db.Model):
     # Encrypta la contraseña del usuario
     def update(self, data):
         for key, item in data.items():
-            if key == 'password':  # add this new line
-                self.password = self.__generate_hash(key)  # add this new line
+            if key == 'password':
+                item = self.__generate_hash(item)
             setattr(self, key, item)
-        self.modified_at = datetime.datetime.now()
+        self.fecha_modificacion = datetime.datetime.now()
         db.session.commit()
 
     #  FIN | CRUD *******************************************
@@ -119,7 +119,7 @@ class TblUserSchema(Schema):
     correo = fields.Str(required=False, validate=Length(min=2, max=30, error="Es nesesario ingresar el correo"))
     telefono = fields.Str(required=True,
                           validate=Length(min=2, max=30, error="Es nesesario ingresar el telefono"))
-    password = fields.Str(required=True, exclude=True, error="Es nesesario ingresar la contraseña")
+    password = fields.Str(required=True, load_only=True, error="Es nesesario ingresar la contraseña")
     fecha_creacion = fields.Date(required=False)
     fecha_nacimiento = fields.Date(required=True)
     fecha_modificacion = fields.Date(required=False)

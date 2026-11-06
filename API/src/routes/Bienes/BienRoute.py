@@ -13,6 +13,7 @@ from ...models import db
 from ...models.Bienes.BienModel import TblBienModel, TblBienSchema, VwBienModel, VwBienSchema
 from ...shared.security.AuthenticationUsers import Auth
 from ...shared.security.AuthenticationEmpleados import Auth as Auth2
+from ...shared.security.session import is_active_employee
 
 bien_api = Blueprint('bien_api', __name__)
 bien_schema = TblBienSchema()
@@ -34,12 +35,13 @@ def get_all():
 @bien_api.route('/approved', methods=['GET'])
 def get_all_approved():
     query = VwBienModel.get_all_bien_approved("Aprobado")
-    result = bien_schemas.dump(query)
+    result = _for_public(bien_schemas.dump(query))
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
 # INI | Get All Properties ***********************************************************************
 @bien_api.route('/reviewing', methods=['GET'])
+@Auth2.auth_required
 def get_all_reviewign():
     query = VwBienModel.get_all_bien_approved("En Revision")
     result = bien_schemas.dump(query)
@@ -48,6 +50,7 @@ def get_all_reviewign():
 
 # INI | Get All Properties ***********************************************************************
 @bien_api.route('/denied', methods=['GET'])
+@Auth2.auth_required
 def get_all_denied():
     query = VwBienModel.get_all_bien_approved("Denegado")
     result = bien_schemas.dump(query)
@@ -58,7 +61,7 @@ def get_all_denied():
 @bien_api.route('/sold', methods=['GET'])
 def get_all_sales():
     query = VwBienModel.get_all_bien_approved("Vendido")
-    result = bien_schemas.dump(query)
+    result = _for_public(bien_schemas.dump(query), approved_only=False)
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
@@ -66,7 +69,7 @@ def get_all_sales():
 @bien_api.route('/rental', methods=['GET'])
 def get_all_rental():
     query = VwBienModel.get_by_objective("Renta")
-    result = bien_schemas.dump(query)
+    result = _for_public(bien_schemas.dump(query))
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
@@ -74,7 +77,7 @@ def get_all_rental():
 @bien_api.route('/sale', methods=['GET'])
 def get_all_sale():
     query = VwBienModel.get_by_objective("Venta")
-    result = bien_schemas.dump(query)
+    result = _for_public(bien_schemas.dump(query))
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
@@ -82,7 +85,7 @@ def get_all_sale():
 @bien_api.route('/seo', methods=['GET'])
 def get_all_seo():
     query = VwBienModel.get_seo()
-    result = bien_schemas.dump(query)
+    result = _for_public(bien_schemas.dump(query))
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
@@ -90,7 +93,7 @@ def get_all_seo():
 @bien_api.route('/<int:id_bien>', methods=['GET'])
 def get_one(id_bien):
     query = VwBienModel.get_one_bien_vw(id_bien)
-    result = bien_schemas.dump(query)
+    result = _for_public(bien_schemas.dump(query))
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
@@ -98,7 +101,7 @@ def get_one(id_bien):
 @bien_api.route('/bytype/<int:id_tipo_bien>', methods=['GET'])
 def get_by_type(id_tipo_bien):
     query = VwBienModel.get_by_type(id_tipo_bien)
-    result = bien_schemas.dump(query)
+    result = _for_public(bien_schemas.dump(query))
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
@@ -107,7 +110,7 @@ def get_by_type(id_tipo_bien):
                 ':precio_menor>/highest/<string:precio_mayor>', methods=['GET'])
 def get_by_filter(id_ciudad, id_tipo_bien, precio_menor, precio_mayor, location):
     query = VwBienModel.get_filters_sale(id_ciudad, id_tipo_bien, precio_menor, precio_mayor, location)
-    result = bien_schemas.dump(query)
+    result = _for_public(bien_schemas.dump(query))
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
@@ -116,7 +119,7 @@ def get_by_filter(id_ciudad, id_tipo_bien, precio_menor, precio_mayor, location)
                 '/<string:precio_menor>/highest/<string:precio_mayor>', methods=['GET'])
 def get_by_filterRent(id_ciudad, id_tipo_bien, precio_menor, precio_mayor, location):
     query = VwBienModel.get_filters_rental(id_ciudad, id_tipo_bien, precio_menor, precio_mayor, location)
-    result = bien_schemas.dump(query)
+    result = _for_public(bien_schemas.dump(query))
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
@@ -160,7 +163,7 @@ def nuevobiene():
 
 # INI | Actualizar bien
 @bien_api.route('/<int:id_bien>/approve', methods=['PUT'])
-@Auth2.auth_required
+@Auth2.auth_admin
 def actualizarbien(id_bien):
     req_data = request.get_json()
     quote = TblBienModel.get_one_bien(id_bien)
@@ -176,7 +179,7 @@ def actualizarbien(id_bien):
 
 # INI | Actualizar bien
 @bien_api.route('/<int:id_bien>/seo', methods=['PUT'])
-@Auth2.auth_required
+@Auth2.auth_admin
 def actualizarbienSEO(id_bien):
     req_data = request.get_json()
     quote = TblBienModel.get_one_bien(id_bien)
@@ -188,6 +191,19 @@ def actualizarbienSEO(id_bien):
         return custom_response({"msg": "Bien actualizado", 'code': 200}, 200)
     else:
         return custom_response({"msg": "Bien no existe", 'code': 304}, 304)
+
+
+def _for_public(rows, approved_only=True):
+    if is_active_employee():
+        return rows
+    visible = []
+    for row in rows:
+        if approved_only and row.get('aprobado') != 'Aprobado':
+            continue
+        row.pop('telefono', None)
+        row.pop('correo', None)
+        visible.append(row)
+    return visible
 
 
 def custom_response(res, status_code):

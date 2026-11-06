@@ -9,9 +9,9 @@ class Services extends Component {
                 <div className="container">
                     <div className="section-title-wrap section-header">
                         <h5 className="custom-primary">¿Quiénes Somos?</h5>
-                        <h2 className="title">Localiza</h2>
+                        <h2 className="title">Plaza</h2>
                                 <p className="subtitle">
-                                Localiza App es una plataforma digital que conecta a compradores y vendedores de bienes inmuebles y vehículos, 
+                                Plaza App es una plataforma digital que conecta a compradores y vendedores de bienes inmuebles y vehículos, 
                                 garantizando un espacio seguro donde pueden encontrarse para cerrar la compra o venta de su propiedad.
 
                                 </p>

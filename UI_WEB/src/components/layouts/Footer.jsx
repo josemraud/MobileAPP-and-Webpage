@@ -68,7 +68,7 @@ class Footer extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-7">
-                                <p className="m-0">© Copyright 2021 - <Link to="#">LocalizaHN</Link> Todos los derechos reservados.</p>
+                                <p className="m-0">© Copyright 2021 - <Link to="#">Plaza</Link> Todos los derechos reservados.</p>
                             </div>
                             <div className="col-lg-5">
                                 <ul>

@@ -1,19 +1,19 @@
 """
 @Author Jose Raudales, Alejandro Mendoza, Felipe Cantarero
-App Localiza
+App Plaza
 """
 
 import os
-# from flask import Flask
 from src.app import create_app
-
-# app = Flask(__name__)
+from src.config import app_config
 
 if __name__ == '__main__':
-    env_name = os.getenv('FLASK_ENV')
+    env_name = os.getenv('FLASK_ENV') or 'development'
+    if env_name not in app_config:
+        env_name = 'development'
     app = create_app(env_name)
-
-    # run app
-
-    app.run(host='0.0.0.0', port='8080')
-
+    app.run(
+        host=os.getenv('HOST', '127.0.0.1'),
+        port=int(os.getenv('PORT', '8080')),
+        debug=bool(app.config.get('DEBUG')),
+    )

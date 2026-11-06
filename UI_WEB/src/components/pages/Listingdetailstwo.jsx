@@ -9,7 +9,7 @@ class Listingdetailstwo extends Component {
     return (
       <Fragment>
         <MetaTags>
-          <title>Localiza | Ver más</title>
+          <title>Plaza | Ver más</title>
           <meta name="description" content="#" />
         </MetaTags>
         <Header />

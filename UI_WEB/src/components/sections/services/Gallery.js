@@ -21,8 +21,8 @@ class Gallery extends Component {
                 </div>
                 <div className="container">
                     <div className="section-title-wrap text-center">
-                        <h5 className="custom-primary">Localiza</h5>
-                        <h2 className="title">¿Qué es Localiza?</h2>
+                        <h5 className="custom-primary">Plaza</h5>
+                        <h2 className="title">¿Qué es Plaza?</h2>
                         <p className="subtitle">
                          Aplicación de servicios inmobiliario y vehiculares que nace ante la imperiosa necesidad de brindar un espacio completo,
                          seguro y de calidad a las personas que deseen comprar o vender sus propiedades en Honduras y la región,

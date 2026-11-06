@@ -136,13 +136,13 @@ sessionStorage.setItem("longitud", position.lng)
 
 
 const customMarker = L.icon({
-    iconUrl:  process.env.PUBLIC_URL + "/assets/img/localizaicono2.png.png",
+    iconUrl:  process.env.PUBLIC_URL + "/assets/img/plaza-icon.png",
     iconSize: [50, 50],
     iconAnchor: [25, 5],
 });
 
 const customMarkerHouse = L.icon({
-  iconUrl: "/assets/img/localizaicono2.png.png",
+  iconUrl: "/assets/img/plaza-icon.png",
   iconSize: [50, 50],
   iconAnchor: [25, 5],
 });

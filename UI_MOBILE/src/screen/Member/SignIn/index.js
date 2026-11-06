@@ -89,7 +89,7 @@ async onClickButton(e) {
                   <Icon active name='arrow-right' type='MaterialCommunityIcons' style={styles.loginBtnIcon} />
                 </TouchableOpacity>
               </View>
-              <TouchableOpacity style={styles.forgot} onPress={() => {Linking.openURL('http://www.applocaliza.com/#/recuperar')}}>
+              <TouchableOpacity style={styles.forgot} onPress={() => {Linking.openURL('http://www.example.com/#/recuperar')}}>
                 <Text style={styles.btnForgot}>{__('¿Olvidó su contraseña?')}</Text>
               </TouchableOpacity>
               <View style={styles.login}>

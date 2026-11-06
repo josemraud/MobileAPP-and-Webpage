@@ -10,7 +10,7 @@ export const Submitlistingvehiculos  = () => {
     return (
       <Fragment>
         <MetaTags>
-          <title>Localiza HN | Venta de Vehículos</title>
+          <title>Plaza | Venta de Vehículos</title>
           <meta name="description" content="#" />
         </MetaTags>
         <Header />

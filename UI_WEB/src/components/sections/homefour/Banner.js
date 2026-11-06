@@ -23,7 +23,7 @@ class Banner extends Component {
                     <div className="banner-item">
                         <div className="banner-inner">
                             <div className="banner-text">
-                                <h1 className="title text-white">Localiza</h1>
+                                <h1 className="title text-white">Plaza</h1>
                                 <p className="subtitle text-white">Somos tu mejor opción para la compra, venta y renta de bienes inmuebles y compra-venta de vehículos nuevos o usados. Tu futuro comienza con un click.</p>
                             </div>
                         </div> 

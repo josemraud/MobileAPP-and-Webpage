@@ -62,13 +62,13 @@
         "link": "/about"
     },{
         "id": 6,
-        "linkText": "Centro Localiza",
+        "linkText": "Centro Plaza",
         "child": false,
         "link": "/coming-soon"
     },
     {
         "id": 7,
-        "linkText": "Geo Localiza",
+        "linkText": "Mapa",
         "child": false,
         "link": "/geo-locator"
     }

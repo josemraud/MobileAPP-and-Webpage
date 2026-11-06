@@ -10,7 +10,7 @@ class GeoLocator extends Component {
     return (
       <Fragment>
         <MetaTags>
-          <title>Localiza HN | GeoLocator</title>
+          <title>Plaza | GeoLocator</title>
           <meta name="description" content="#" />
         </MetaTags>
         <Headerfour />

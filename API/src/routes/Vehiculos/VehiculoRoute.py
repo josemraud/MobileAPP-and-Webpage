@@ -13,6 +13,7 @@ from ...models import db
 from ...models.Vehiculos.VehiculoModel import TblVehiculoModel, TblVehiculoSchema, VwVehiculoModel, VwVehiculoSchema
 from ...shared.security.AuthenticationUsers import Auth
 from ...shared.security.AuthenticationEmpleados import Auth as Auth2
+from ...shared.security.session import is_active_employee
 
 vehiculo_api = Blueprint('vehiculo_api', __name__)
 vehiculo_schema = TblVehiculoSchema()
@@ -23,6 +24,7 @@ load_dotenv()
 
 # INI | Get All Properties ***********************************************************************
 @vehiculo_api.route('/', methods=['GET'])
+@Auth2.auth_required
 def get_all():
     query = VwVehiculoModel.get_all_vehiculo()
     result = vehiculo_schemas.dump(query)
@@ -33,12 +35,13 @@ def get_all():
 @vehiculo_api.route('/approved', methods=['GET'])
 def get_all_approved():
     query = VwVehiculoModel.get_all_vehiculo_approved("Aprobado")
-    result = vehiculo_schemas.dump(query)
+    result = _for_public(vehiculo_schemas.dump(query))
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
 # INI | Get All Properties ***********************************************************************
 @vehiculo_api.route('/denied', methods=['GET'])
+@Auth2.auth_required
 def get_all_denied():
     query = VwVehiculoModel.get_all_vehiculo_approved("Denegado")
     result = vehiculo_schemas.dump(query)
@@ -47,6 +50,7 @@ def get_all_denied():
 
 # INI | Get All Properties ***********************************************************************
 @vehiculo_api.route('/reviewing', methods=['GET'])
+@Auth2.auth_required
 def get_all_review():
     query = VwVehiculoModel.get_all_vehiculo_approved("En Revision")
     result = vehiculo_schemas.dump(query)
@@ -57,7 +61,7 @@ def get_all_review():
 @vehiculo_api.route('/sold', methods=['GET'])
 def get_all_sales():
     query = VwVehiculoModel.get_all_vehiculo_approved("Vendido")
-    result = vehiculo_schemas.dump(query)
+    result = _for_public(vehiculo_schemas.dump(query), approved_only=False)
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
@@ -65,7 +69,7 @@ def get_all_sales():
 @vehiculo_api.route('/new', methods=['GET'])
 def get_all_new():
     query = VwVehiculoModel.get_by_objective("Nuevo")
-    result = vehiculo_schemas.dump(query)
+    result = _for_public(vehiculo_schemas.dump(query))
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
@@ -73,7 +77,7 @@ def get_all_new():
 @vehiculo_api.route('/used', methods=['GET'])
 def get_all_used():
     query = VwVehiculoModel.get_by_objective("Usado")
-    result = vehiculo_schemas.dump(query)
+    result = _for_public(vehiculo_schemas.dump(query))
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
@@ -81,7 +85,7 @@ def get_all_used():
 @vehiculo_api.route('/seo', methods=['GET'])
 def get_Seo():
     query = VwVehiculoModel.get_seo()
-    result = vehiculo_schemas.dump(query)
+    result = _for_public(vehiculo_schemas.dump(query))
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
@@ -89,7 +93,7 @@ def get_Seo():
 @vehiculo_api.route('/<int:id_vehiculo>', methods=['GET'])
 def get_one(id_vehiculo):
     query = VwVehiculoModel.get_one_vehiculo(id_vehiculo)
-    result = vehiculo_schemas.dump(query)
+    result = _for_public(vehiculo_schemas.dump(query))
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
@@ -97,7 +101,7 @@ def get_one(id_vehiculo):
 @vehiculo_api.route('/bytype/<int:id_tipo_vehiculo>', methods=['GET'])
 def get_by_type(id_tipo_vehiculo):
     query = VwVehiculoModel.get_by_type(id_tipo_vehiculo)
-    result = vehiculo_schemas.dump(query)
+    result = _for_public(vehiculo_schemas.dump(query))
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
@@ -106,7 +110,7 @@ def get_by_type(id_tipo_vehiculo):
                     '/<string:precio_mayor>', methods=['GET'])
 def get_by_filter(id_ciudad, id_tipo_vehiculo, precio_menor, precio_mayor):
     query = VwVehiculoModel.get_filters_new(id_ciudad, id_tipo_vehiculo, precio_menor, precio_mayor)
-    result = vehiculo_schemas.dump(query)
+    result = _for_public(vehiculo_schemas.dump(query))
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
@@ -115,7 +119,7 @@ def get_by_filter(id_ciudad, id_tipo_vehiculo, precio_menor, precio_mayor):
                     '>/highest/<string:precio_mayor>', methods=['GET'])
 def get_by_filter_used(id_ciudad, id_tipo_vehiculo, precio_menor, precio_mayor):
     query = VwVehiculoModel.get_filters_used(id_ciudad, id_tipo_vehiculo, precio_menor, precio_mayor)
-    result = vehiculo_schemas.dump(query)
+    result = _for_public(vehiculo_schemas.dump(query))
     return make_response(jsonify({'data': result}), 200)  # FIN | Get All Users *************
 
 
@@ -175,7 +179,7 @@ def actualizarvehiculo(id_vehiculo):
 
 # INI | Actualizar vehiculo
 @vehiculo_api.route('/<int:id_vehiculo>/seo', methods=['PUT'])
-@Auth2.auth_required
+@Auth2.auth_admin
 def actualizarvehiculoseo(id_vehiculo):
     req_data = request.get_json()
     quote = TblVehiculoModel.get_one_vehiculo(id_vehiculo)
@@ -187,6 +191,19 @@ def actualizarvehiculoseo(id_vehiculo):
         return custom_response({"msg": "vehiculo actualizado", 'code': 200}, 200)
     else:
         return custom_response({"msg": "vehiculo no existe", 'code': 304}, 304)
+
+
+def _for_public(rows, approved_only=True):
+    if is_active_employee():
+        return rows
+    visible = []
+    for row in rows:
+        if approved_only and row.get('aprobado') != 'Aprobado':
+            continue
+        row.pop('telefono', None)
+        row.pop('correo', None)
+        visible.append(row)
+    return visible
 
 
 def custom_response(res, status_code):

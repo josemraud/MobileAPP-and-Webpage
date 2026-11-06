@@ -4,12 +4,12 @@
 @Descripcion Rutas de foto
 """
 from dotenv import load_dotenv
-from flask import json, Response, Blueprint, request, jsonify, make_response
-from sqlalchemy import text
+from flask import g, json, Response, Blueprint, request, jsonify, make_response
 
-from ...models import db
+from ...models.Auth.UsuarioModel import TblUserModel
+from ...models.Bienes.BienModel import TblBienModel
 from ...models.Bienes.FotoBienModel import TblFotoModel, TblFotoSchema
-from ...shared.security.AuthenticationEmpleados import Auth
+from ...shared.security.session import session_required
 
 foto_api = Blueprint('foto_api', __name__)
 foto_schema = TblFotoSchema()
@@ -44,6 +44,7 @@ def get_all_by_bien_first(id_bien_send):
 
 # INI | New User ****************************************************************************
 @foto_api.route('/', methods=['POST'])
+@session_required
 def nuevafoto():
     req_data = request.get_json(force=True)
     errors = foto_schema.validate(req_data)
@@ -52,6 +53,13 @@ def nuevafoto():
         return errors, 400
 
     data = foto_schema.load(req_data)
+    bien = TblBienModel.get_one_bien(data.get('id_bien'))
+    if not bien:
+        return custom_response({'msg': 'Bien no existe', 'code': 404}, 404)
+    if g.user.get('typ') == 'user':
+        owner = TblUserModel.get_by_username(g.user.get('id'))
+        if not owner or bien.id_usuario != owner.id_usuario:
+            return custom_response({'msg': 'No autorizado', 'code': 403}, 403)
 
     pics = TblFotoModel(data)
     pics.save()

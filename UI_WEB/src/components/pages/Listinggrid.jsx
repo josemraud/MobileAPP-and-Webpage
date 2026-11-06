@@ -10,7 +10,7 @@ export const Listinggrid  = () => {
     return (
       <Fragment>
         <MetaTags>
-          <title>Localiza | Vehiculos Nuevos</title>
+          <title>Plaza | Vehiculos Nuevos</title>
           <meta name="description" content="#" />
         </MetaTags>
         <Header />

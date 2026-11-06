@@ -24,7 +24,7 @@ export const Menu = () => {
     <Fragment>
       {/* Logo */}
       <Link className="navbar-brand" to="/">
-        <img src={"/assets/img/localizaicono2.png.png"} alt="logo" />
+        <img src={"/assets/img/plaza-icon.png"} alt="logo" />
       </Link>
       {/* Menu */}
       
@@ -136,15 +136,15 @@ export const Menu = () => {
           <Link to="/faq">Preguntas Frecuentes</Link>
         </li>
 
-  {/* Geo Localiza  */}
+  {/* Mapa  */}
   <li className="menu-item menu-item-has-children">
-          <Link to="/geo-locator">Geo Localiza</Link>
+          <Link to="/geo-locator">Mapa</Link>
         </li>
 
 
-         {/* Centro Localiza | FAC-04/02/21  */}
+         {/* Centro Plaza | FAC-04/02/21  */}
          <li className="menu-item menu-item-has-children">
-          <Link to="/coming-soon">Centro Localiza</Link>
+          <Link to="/coming-soon">Centro Plaza</Link>
         </li>
      
       </ul>

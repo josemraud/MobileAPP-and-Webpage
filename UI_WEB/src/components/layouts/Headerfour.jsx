@@ -38,8 +38,8 @@ class Headerfour extends HeaderComponent {
                         <div className="container">
                             <div className="top-header-inner">
                                 <ul className="social-media">
-                                    <li> <a target="blank" href="https://www.facebook.com/applocaliza"className="fab fa-facebook-f"></a> </li>
-                                    <li>  <a target="blank" href="https://www.instagram.com/applocaliza/"className="fab fa-instagram" ></a> </li>
+                                    <li> <a href="#" className="fab fa-facebook-f"></a> </li>
+                                    <li>  <a href="#" className="fab fa-instagram" ></a> </li>
                                   
                                    
                                    

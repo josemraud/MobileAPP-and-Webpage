@@ -77,9 +77,10 @@ export default class extends React.Component {
 
   async componentDidMount () {
     await getCorreo();
+    const token = await AsyncStorage.getItem('token');
     await fetch(REACT_APP_REQ+`/user/auth/${usuario}`, {
          method: 'GET',
-         headers: {'Content-Type': 'application/json'}
+         headers: {'Content-Type': 'application/json', 'api-token': token || ''}
       })
       .then((response) => response.json())
       .then((responseJson) => {

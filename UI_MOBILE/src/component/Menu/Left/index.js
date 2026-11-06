@@ -48,7 +48,7 @@ class MenuLeft extends Component {
         <View style={styles.content}>
           <ScrollView>
             {this.renderMenuList(MENU.Data1)}
-            <Text style={styles.itemLabel}>{__('Localiza')}</Text>
+            <Text style={styles.itemLabel}>{__('Plaza')}</Text>
             {this.renderMenuList(MENU.Data2)}
           </ScrollView>
         </View>

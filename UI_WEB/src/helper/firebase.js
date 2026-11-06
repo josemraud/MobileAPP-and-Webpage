@@ -13,7 +13,7 @@ const app = firebase.initializeApp({
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
-  appId: process.env.REAC_APP_FIREBASE_ID,
+  appId: process.env.REACT_APP_FIREBASE_ID || process.env.REAC_APP_FIREBASE_ID,
 });
 
 export const auth = firebase.auth();

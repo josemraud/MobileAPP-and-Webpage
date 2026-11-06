@@ -157,7 +157,7 @@ class Listingwrapper extends Component {
                                     <h5>Contacta a nuestros agentes</h5>
                                     {/* Author Start */}
                                     <div className="media sidebar-author listing-agent">
-                                        <Link to="#"><img src="/assets/img/localizaicono2.png.png" alt="logo"></img></Link>
+                                        <Link to="#"><img src="/assets/img/plaza-icon.png" alt="logo"></img></Link>
                                         <div className="media-body">
                                             <button
                                                 type="submit"

@@ -10,7 +10,7 @@ class Services extends Component {
     return (
       <Fragment>
         <MetaTags>
-          <title>Localiza | Acerca de Nosotros</title>
+          <title>Plaza | Acerca de Nosotros</title>
           <meta name="description" content="#" />
         </MetaTags>
         <Header />

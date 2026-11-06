@@ -8,7 +8,7 @@ export const Login  = () => {
     return (
       <Fragment>
         <MetaTags>
-          <title>Localiza HN | Ingresa</title>
+          <title>Plaza | Ingresa</title>
           <meta name="description" content="#" />
         </MetaTags>
         <Header />

@@ -30,18 +30,13 @@ def login():
         return custom_response({'error': 'Necesitas Usuario para ingresar'}, 400)
 
     user = TblUserModel.get_by_username(data.get('correo'))
-    if not user:
-        return custom_response(
-            {'msg': 'Credenciales no válidas', 'code': 400, 'ok': False}, 400)
-
-    if not user:
+    if not user or not user.activo or not user.check_hash(data.get('password')):
         return custom_response({'msg': 'Credenciales no válidas', 'code': 400, 'ok': False}, 400)
 
-    if not user.check_hash(data.get('password')):
-        return custom_response({'msg': 'Credenciales no válidas', 'code': 400, 'ok': False}, 400)
+    if user.confirmado is False:
+        return custom_response({'msg': 'Confirma tu correo para acceder', 'code': 403, 'ok': False}, 403)
 
-    ser_data = user_schema.dump(user)
-    token = Auth.generate_token(ser_data.get('correo'))
+    token = Auth.generate_token(user.correo)
 
     return custom_response({'token': token, "msg": "Sesion Iniciada",
                             'code': 200, 'ok': True}, 200)  # FIN | Login User ***********
@@ -56,10 +51,6 @@ def logout():
     error = user_schema.validate(req_data, partial=True)
     if error:
         return error, 400
-
-    data = user_schema.load(req_data, partial=True)
-    user = TblUserModel.get_by_username(data.get('correo'))
-    ser_data = user_schema.dump(user)
 
     return custom_response({"msg": "Sesión Finalizada", "code": 200, "ok": True}, 200)
 

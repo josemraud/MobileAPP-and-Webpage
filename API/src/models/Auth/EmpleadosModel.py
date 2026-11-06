@@ -29,7 +29,7 @@ class TblEmpleadoModel(db.Model):
     nombre = db.Column(db.String(50), nullable=False)
     apellido = db.Column(db.String(50), nullable=True)
     correo = db.Column(db.String(50), nullable=True)
-    password = db.Column(db.String(15), nullable=True)
+    password = db.Column(db.String(500), nullable=True)
     activo = db.Column(db.Boolean, default=True)
     fecha_creacion = db.Column(db.Date, default=datetime.datetime.now())
     fecha_modificacion = db.Column(db.Date, nullable=True)
@@ -62,8 +62,8 @@ class TblEmpleadoModel(db.Model):
     # Encrypta la contraseña del empleado
     def update(self, data):
         for key, item in data.items():
-            if key == 'password':  # add this new line
-                self.password = self.__generate_hash(key)  # add this new line
+            if key == 'password':
+                item = self.__generate_hash(item)
             setattr(self, key, item)
         self.fecha_modificacion = datetime.datetime.now()
         db.session.commit()
@@ -111,7 +111,7 @@ class TblEmpleadoSchema(Schema):
                         validate=Length(min=1, max=20, error="Es nesesario ingresar el nombre"))
     apellido = fields.Str(required=True, validate=Length(min=2, max=30, error="Es nesesario ingresar el apellido"))
     correo = fields.Str(required=False, validate=Length(min=2, max=30, error="Es nesesario ingresar el correo"))
-    password = fields.Str(required=True, exclude=True, error="Es nesesario ingresar la contraseña")
+    password = fields.Str(required=True, load_only=True, error="Es nesesario ingresar la contraseña")
     activo = fields.Boolean(required=False)
     fecha_creacion = fields.Date(required=False)
     fecha_modificacion = fields.Date(required=False)
@@ -122,7 +122,6 @@ class TblEmpleadoSchema(Schema):
 
     class Meta:
         strict = True
-        # exclude = ['password']
 
 
 class VwEmpleadoModel(db.Model):
@@ -141,7 +140,6 @@ class VwEmpleadoModel(db.Model):
     nombre = db.Column(db.String(50), nullable=False)
     apellido = db.Column(db.String(50), nullable=True)
     correo = db.Column(db.String(50), nullable=True)
-    password = db.Column(db.String(15), nullable=True)
     activo = db.Column(db.Boolean, default=True)
     fecha_creacion = db.Column(db.Date, default=datetime.datetime.now())
     fecha_modificacion = db.Column(db.Date, nullable=True)
@@ -166,7 +164,6 @@ class VwEmpleadoModel(db.Model):
         self.desc_rol = data.get('desc_rol')
         self.id_rol = data.get('id_rol')
         self.activo = data.get('activo')
-        self.password = self.__generate_hash(data.get('password'))
         self.fecha_creacion = data.get('fecha_creacion')
         self.fecha_modificacion = data.get('fecha_modificacion')
 
@@ -188,12 +185,6 @@ class VwEmpleadoModel(db.Model):
     def get_user_by_email(correo):
         return VwEmpleadoModel.query.filter_by(correo=correo).first()
 
-    def __generate_hash(self, password):
-        return bcrypt.generate_password_hash(password, rounds=10).decode("utf-8")
-
-    def check_hash(self, password):
-        return bcrypt.check_password_hash(self.password, password)
-
     def __repr(self):
         return '<id_empleado {}>'.format(self.id_empleado)
 
@@ -211,7 +202,6 @@ class VwEmpleadoSchema(Schema):
                         validate=Length(min=1, max=20, error="Es nesesario ingresar el nombre"))
     apellido = fields.Str(required=True, validate=Length(min=2, max=30, error="Es nesesario ingresar el apellido"))
     correo = fields.Str(required=False, validate=Length(min=2, max=30, error="Es nesesario ingresar el correo"))
-    password = fields.Str(required=True, exclude=True, error="Es nesesario ingresar la contraseña")
     activo = fields.Boolean(required=False)
     fecha_creacion = fields.Date(required=False)
     fecha_modificacion = fields.Date(required=False)

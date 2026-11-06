@@ -47,8 +47,11 @@ def create_app(env_name):
 
     """ Configuracion de los CORS """
     app.config['CORS_HEADERS'] = 'Content-Type'
-    CORS(app)
-    CORS(app, resources={r"/*": {"origins": "*"}})
+    CORS(
+        app,
+        resources={r"/api/*": {"origins": app.config.get('CORS_ORIGINS', [])}},
+        allow_headers=['Content-Type', 'api-token'],
+    )
 
     @app.route('/', methods=['GET'])
     def index():

@@ -1,86 +1,45 @@
-import os
 from functools import wraps
 
-import jwt
-from dotenv import load_dotenv
-from flask import json, Response, request, g
+from flask import g, request
 
-load_dotenv()
-import datetime
 from ...models.Auth.UsuarioModel import TblUserModel
+from .tokens import decode, json_error, user_token
 
 
 class Auth():
 
     @staticmethod
     def generate_token(user_id):
-        """
-        Generate Token Method
-        """
         try:
-            payload = {
-                'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=720),
-                'iat': datetime.datetime.utcnow(),
-                'sub': user_id
-            }
-            return jwt.encode(
-                payload,
-                os.getenv('JWT_SECRET_KEY'),
-                'HS256'
-            ).decode("utf-8")
-        except Exception as e:
-            return Response(
-                mimetype="application/json",
-                response=json.dumps({'error': 'Error no se pudo generar token'}),
-                status=401
-            )
+            return user_token(user_id)
+        except Exception:
+            return json_error('Error no se pudo generar token')
 
     @staticmethod
     def decode_token(token):
-        re = {'data': {}, 'error': {}}
-        try:
-            payload = jwt.decode(token, os.getenv('JWT_SECRET_KEY'))
-            re['data'] = {'user_id': payload['sub']}
-            return re
-        except jwt.ExpiredSignatureError as e1:
-            re['error'] = {'code': 401, 'message': 'El token ha expirado, inicie sesión nuevamente'}
-            return re
-        except jwt.InvalidTokenError:
-            re['error'] = {'code': 401, 'message': 'Token invalido, consiga un nuevo token'}
-            return re
+        return decode(token)
 
-    # decorator
     @staticmethod
     def auth_required(func):
         @wraps(func)
         def decorated_auth(*args, **kwargs):
             if 'api-token' not in request.headers:
-                return Response(
-                    mimetype="application/json",
-                    response=json.dumps({'error': 'No se puede validar token'}),
-                    status=401
-                )
+                return json_error('No se puede validar token')
             token = request.headers.get('api-token')
             data = Auth.decode_token(token)
-            user_id = data['data']['user_id']
-            check_user = TblUserModel.get_by_username(user_id)
-            if check_user.activo is False:
-                return {'code': 401, 'message': 'Tu usuario fue desactivado'}
-            if check_user.confirmado is False:
-                return {'code': 401, 'message': 'Confirma tu correo para acceder'}
             if data['error']:
-                return Response(
-                    mimetype="application/json",
-                    response=json.dumps(data['error']),
-                    status=401
-                )
+                return json_error(data['error'].get('message', 'Token invalido'))
+            if data['data'].get('typ') != 'user':
+                return json_error('Token invalido, consiga un nuevo token')
+            user_id = data['data'].get('user_id')
+            check_user = TblUserModel.get_by_username(user_id)
             if not check_user:
-                return Response(
-                    mimetype="application/json",
-                    response=json.dumps({'error': 'No existe un usuario con esas credenciales'}),
-                    status=401
-                )
-            g.user = {'id': user_id}
+                return json_error('No existe un usuario con esas credenciales')
+            if check_user.activo is False:
+                return json_error('Tu usuario fue desactivado')
+            if check_user.confirmado is False:
+                return json_error('Confirma tu correo para acceder')
+            g.user = {'id': user_id, 'typ': 'user'}
             return func(*args, **kwargs)
 
         return decorated_auth

@@ -12,7 +12,7 @@ export const EditarPerfil  = () =>  {
     return (
       <Fragment>
         <MetaTags>
-          <title>Localiza HN | Editar Perfil</title>
+          <title>Plaza | Editar Perfil</title>
           <meta name="description" content="#" />
         </MetaTags>
         <Header/>

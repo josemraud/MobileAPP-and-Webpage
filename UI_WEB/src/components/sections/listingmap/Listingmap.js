@@ -18,7 +18,7 @@ const customMarker = L.icon({
 });
 
 const customMarkerHouse = L.icon({
-  iconUrl: process.env.PUBLIC_URL + "/assets/img/localizaicono2.png.png",
+  iconUrl: process.env.PUBLIC_URL + "/assets/img/plaza-icon.png",
   iconSize: [50, 50],
   iconAnchor: [25, 5],
 });

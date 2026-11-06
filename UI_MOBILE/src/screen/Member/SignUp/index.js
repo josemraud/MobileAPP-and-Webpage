@@ -90,9 +90,9 @@ async onClickButton(e) {
   if(data.code == 201){
     this.setState({ postId: data.id });
     emailjs.send("service_ht0xjsb","template_gzp65n9",{
-      from_name: "Equipo Localiza",
+      from_name: "Equipo Plaza",
       nombre: this.state.correo.toLowerCase().replace(/\s+/g, ''),
-      message: 'Hola '+this.state.nombre+' '+this.state.apellido+', bienvenido a localiza, puedes seguir este enlace para confirmar tu correo'+' '+'http://www.applocaliza.com/#/confirm'+'/'+data.id_usuario,
+      message: 'Hola '+this.state.nombre+' '+this.state.apellido+', bienvenido a Plaza, puedes seguir este enlace para confirmar tu correo'+' '+'http://www.example.com/#/confirm'+'/'+data.confirm_token,
       reply_to: this.state.correo.toLowerCase().replace(/\s+/g, ''),
       });
     Alert.alert(  

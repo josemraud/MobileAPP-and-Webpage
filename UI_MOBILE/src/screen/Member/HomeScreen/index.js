@@ -63,7 +63,7 @@ export default class extends React.Component {
                     }}
                   >
                     <Image source={require('@asset/images/logol.png')} style={styles.btnImg} />
-                    <Text style={styles.btnText}>{__('Centro Localiza')}</Text>
+                    <Text style={styles.btnText}>{__('Centro Plaza')}</Text>
                   </TouchableOpacity>
     
                   <TouchableOpacity style={styles.btnBox} />

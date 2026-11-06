@@ -9,7 +9,7 @@ export const Homefour = () => {
         return (
             <Fragment>
                 <MetaTags>
-                    <title>Localiza | Inicio</title>
+                    <title>Plaza | Inicio</title>
                     <meta
                         name="description"
                         content="#"

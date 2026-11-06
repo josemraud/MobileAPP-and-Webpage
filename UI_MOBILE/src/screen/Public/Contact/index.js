@@ -31,7 +31,7 @@ export default class extends React.Component {
                 <Icon name='map' type='FontAwesome5' style={styles.contactIcon} />
                 <View>
                   <Text style={styles.contactHeader}>{__('Ubicación').toUpperCase()}</Text>
-                  <Text style={styles.contactDesc}>Centro Localiza, Anillo Periférico{'\n'}Tegucigalpa, Honduras</Text>
+                  <Text style={styles.contactDesc}>Centro Plaza, Anillo Periférico{'\n'}Tegucigalpa, Honduras</Text>
                 </View>
               </View>
               <View style={styles.contactItem}>
@@ -45,14 +45,14 @@ export default class extends React.Component {
                 <Icon name='envelope' type='FontAwesome5' style={styles.contactIcon} />
                 <View>
                   <Text style={styles.contactHeader}>{__('Correo').toUpperCase()}</Text>
-                  <Text style={styles.contactDesc}>soporte@applocaliza.com</Text>
+                  <Text style={styles.contactDesc}>soporte@example.com</Text>
                 </View>
               </View>
               <View style={[styles.contactItem, styles.contactItemLast]}>
                 <Icon name='globe' type='FontAwesome' style={styles.contactIcon} />
                 <View>
                   <Text style={styles.contactHeader}>{__('Sitio Web').toUpperCase()}</Text>
-                  <Text style={styles.contactDesc}>www.applocaliza.com</Text>
+                  <Text style={styles.contactDesc}>www.example.com</Text>
                 </View>
               </View>
             </View>

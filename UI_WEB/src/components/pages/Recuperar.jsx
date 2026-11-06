@@ -32,12 +32,6 @@ export const Recuperar = () => {
       .recUser(correo)
             .then((resp) => {
               if (resp.code === 200) {
-                emailjs.send("service_ht0xjsb","template_jjwudtk",{
-                    from_name: "Localiza",
-                    correo:correo,
-                    message: 'Hola '+correo+' tu contraseña temporal es '+resp.password,
-                    reply_to: correo,
-                    });
                     Swal.fire(
                       "Te enviamos un correo con una contraseña temporal para que puedas cambiar tu contraseña!",
                       JSON.stringify(resp.msg),

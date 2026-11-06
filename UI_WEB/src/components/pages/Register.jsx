@@ -8,7 +8,7 @@ class Register extends Component {
     return (
       <Fragment>
         <MetaTags>
-          <title>Localiza HN | Registrarse</title>
+          <title>Plaza | Registrarse</title>
           <meta name="description" content="#" />
         </MetaTags>
         <Header />

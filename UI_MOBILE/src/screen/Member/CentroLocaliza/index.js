@@ -27,10 +27,10 @@ export default class extends React.Component {
   render() {
     return (
         <Container style={theme.layoutFx}>
-            <Header navLeftType='back' statusBarType='dark' navMiddleType='medium' title={__('Centro Localiza')} />
+            <Header navLeftType='back' statusBarType='dark' navMiddleType='medium' title={__('Centro Plaza')} />
             <Content>
              <View>
-                <Image source={require('@asset/images/centro-localiza.jpg')} resizeMode='cover'>
+                <Image source={require('@asset/images/centro-plaza.jpg')} resizeMode='cover'>
                 </Image>
             </View>
           </Content>

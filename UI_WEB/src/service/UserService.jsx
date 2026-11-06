@@ -7,8 +7,8 @@ export class UserService {
   getUser(correo) {
     return callAPIConToken(`user/auth/${correo}`, "", "GET");
 }
-confirmUser(id) {
-  return callAPIConToken(`user/auth/${id}/confirmed`, "", "PUT");
+confirmUser(token) {
+  return callAPISinToken("user/auth/confirm", { token }, "PUT");
 }
 async recUser(correo) {
   return await callAPISinToken(`user/auth/${correo}/restore`, "", "PUT");

@@ -10,7 +10,7 @@ class Faq extends Component {
     return (
       <Fragment>
         <MetaTags>
-          <title>Localiza HN | Preguntas Frecuentes</title>
+          <title>Plaza | Preguntas Frecuentes</title>
           <meta name="description" content="#" />
         </MetaTags>
         <Headerfour />

@@ -9,7 +9,7 @@ class Comingsoon extends Component {
         return (
             <Fragment>
                 <MetaTags>
-                    <title>Localiza | Centro Localiza</title>
+                    <title>Plaza | Centro Plaza</title>
                     <meta
                         name="description"
                         content="#"

@@ -8,7 +8,7 @@ class Listingmap extends Component {
     return (
       <Fragment>
         <MetaTags>
-          <title>Localiza  | Venta de Bienes</title>
+          <title>Plaza  | Venta de Bienes</title>
           <meta name="description" content="#" />
         </MetaTags>
         <Header />

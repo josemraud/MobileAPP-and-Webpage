@@ -9,13 +9,13 @@ class Footercontent extends Component {
                     <div className="row">
                         <div className="col-lg-3 col-md-4 col-sm-12 footer-widget">
                             <div className="footer-logo">
-                                <img src={process.env.PUBLIC_URL + "/assets/img/localizaicono2.png.png"} alt="acres" />
+                                <img src={process.env.PUBLIC_URL + "/assets/img/plaza-icon.png"} alt="acres" />
                                 
                             </div>
                             <p>“Tu futuro comienza con un click” </p>
                             <ul className="social-media">
-                                    <li> <a target="blank" href="https://www.facebook.com/applocaliza"className="fab fa-facebook-f"></a> </li>
-                                    <li>  <a target="blank" href="https://www.instagram.com/applocaliza/"className="fab fa-instagram" ></a> </li>
+                                    <li> <a href="#" className="fab fa-facebook-f"></a> </li>
+                                    <li>  <a href="#" className="fab fa-instagram" ></a> </li>
                                   
                                    
                             </ul>
@@ -24,7 +24,7 @@ class Footercontent extends Component {
                             <h5 className="widget-title">Contáctenos</h5>
                             <ul>
                                 <li> <a target = "blank" href="https://api.whatsapp.com/send?phone=+50432763465"><i className="fab fa-whatsapp" /> WhatsApp</a> </li>
-                                <li> <a href="mailto:soporte@applocaliza.com?Subject=Informacion"><i className="fas fa-envelope" /> Mail</a> </li>
+                                <li> <a href="mailto:soporte@example.com?Subject=Informacion"><i className="fas fa-envelope" /> Mail</a> </li>
                                 
                             </ul>
                         </div>
@@ -41,7 +41,7 @@ class Footercontent extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-7">
-                                <p className="m-0">© Copyright 2021 - <Link to="#">Localiza Technologies HN</Link> Todos los derechos reservados.</p>
+                                <p className="m-0">© Copyright 2021 - <Link to="#">Plaza</Link> Todos los derechos reservados.</p>
                             </div>
                            
                         </div>

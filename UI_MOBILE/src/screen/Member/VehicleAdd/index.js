@@ -310,8 +310,7 @@ async componentDidMount() {
             } 
             const requestOptions_pic = {
               method: 'POST',
-              headers: {'Content-Type': 'application/json'},
-                      
+              headers: {'Content-Type': 'application/json', 'api-token': token},
                         body: JSON.stringify(formFoto)
             }; 
             fetch(REACT_APP_REQ+'/vehicle/pics/', requestOptions_pic);
@@ -531,7 +530,7 @@ async componentDidMount() {
         <View style={styles.container}>
       <View style={styles.checkboxContainer}>
         <Text style={styles.label}>Al hacer clic en "Agregar", aceptas nuestros  <Text style={styles.labellink}
-      onPress={() => Linking.openURL('http://www.applocaliza.com/#/legal')}>Términos y Condiciones
+      onPress={() => Linking.openURL('http://www.example.com/#/legal')}>Términos y Condiciones
       </Text>
       </Text>
      

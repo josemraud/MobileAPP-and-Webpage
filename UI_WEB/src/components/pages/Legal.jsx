@@ -10,7 +10,7 @@ class Legal extends Component {
     return (
       <Fragment>
         <MetaTags>
-          <title>Localiza | Legal</title>
+          <title>Plaza | Legal</title>
           <meta name="description" content="#" />
         </MetaTags>
         <Header />

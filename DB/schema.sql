@@ -1,6 +1,6 @@
---gcloud sql connect applocaliza-2021 --user=postgres
---create database applocalizadb;
--- \c applocalizadb;
+--gcloud sql connect market-demo --user=postgres
+--create database marketdb;
+-- \c marketdb;
 
 CREATE SCHEMA sch_seguridad;
 CREATE SCHEMA sch_mantenimientos;
@@ -193,7 +193,6 @@ AS SELECT te.id_empleado,
     te.nombre,
     te.apellido,
     te.id_pais,
-    te.password,
     te.activo,
     te.fecha_creacion,
     te.fecha_modificacion,
@@ -677,5 +676,4 @@ VALUES('Honduras', true);
 
 INSERT INTO sch_seguridad.tbl_empleados
 (nombre, apellido, correo, "password", id_pais, activo, fecha_creacion, id_rol)
-VALUES('Desarrollo', 'Tecnologico', 'dtecnologia@applocaliza.com', '$2b$10$bgo3JohP5mhFyHWwFoWqkOkkiw3AqOGPbCYisuhyU5Ok/uKwKyxrW', 1, true, now(), 1);
--- Password: T3chdev7
+VALUES('Desarrollo', 'Tecnologico', 'dtecnologia@example.com', '$2b$10$xtd0aoayzEDvQhxqMCjNnei3P1aSlKSYiNaeiuyd9poxDVamG7ftW', 1, true, now(), 1);

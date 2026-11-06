@@ -1,6 +1,6 @@
-# Localiza
+# Plaza
 
-Localiza is a marketplace for real estate and vehicles in Honduras. People can browse, publish, and manage properties and cars from a website or a mobile app. Both clients talk to the same Flask API, which stores data in PostgreSQL.
+Plaza is a marketplace for real estate and vehicles in Honduras. People can browse, publish, and manage properties and cars from a website or a mobile app. Both clients talk to the same Flask API, which stores data in PostgreSQL.
 
 ## Repository layout
 
@@ -26,7 +26,7 @@ Environment files are not in Git. Create the `.env` files below on your machine.
 Create an empty PostgreSQL database, then load the schema:
 
 ```bash
-psql -d localizadb -f DB/ScriptLocalizaDB.sql
+psql -d localizadb -f DB/schema.sql
 ```
 
 The script creates `sch_seguridad`, `sch_mantenimientos`, `sch_vehiculos`, `sch_bienes`, and `sch_publicidad`. The diagram is `DB/Diagrama_BD.png`.
@@ -61,13 +61,20 @@ Create `API/.env` before starting the server. `FLASK_ENV` must be `development` 
 FLASK_ENV=development
 DATABASE_URL=postgresql://USER:PASSWORD@localhost:5432/localizadb
 SQLALCHEMY_TRACK_MODIFICATIONS=False
-DEBUG=True
+DEBUG=False
 TESTING=False
 JWT_SECRET_KEY=replace-with-a-long-random-string
 MAX_CONTENT_LENGTH=16777216
 UPLOAD_EXTENSIONS=['.jpg', '.png', '.pdf', '.jpeg']
 UPLOAD_FOLDER=uploads
+HOST=127.0.0.1
+CORS_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
+EMAILJS_SERVICE_ID=
+EMAILJS_TEMPLATE_RESET=
+EMAILJS_PUBLIC_KEY=
 ```
+
+`DEBUG` and `TESTING` are read as booleans. Only `true`, `yes`, `on`, and `1` turn them on. `HOST` defaults to `127.0.0.1`; set `HOST=0.0.0.0` when a phone on the same network must reach the API. Password recovery sends the temporary password through EmailJS and does not return it in the API response. Set the three `EMAILJS_` values so that email can be delivered.
 
 The API is available at `http://localhost:8080`. A request to `/` returns a plain-text check. Resource routes live under `/api/v1`:
 
@@ -116,9 +123,10 @@ REACT_APP_FIREBASE_PROJECT_ID=
 REACT_APP_FIREBASE_STORAGE_BUCKET=
 REACT_APP_FIREBASE_SENDER_ID=
 REAC_APP_FIREBASE_ID=
+REACT_APP_FIREBASE_ID=
 ```
 
-`REAC_APP_FIREBASE_ID` is spelled that way in the web Firebase setup. Production build:
+The web client reads `REACT_APP_FIREBASE_ID` and still accepts the older `REAC_APP_FIREBASE_ID` name. Production build:
 
 ```bash
 npm run build
@@ -160,6 +168,7 @@ REACT_APP_FIREBASE_PROJECT_ID=
 REACT_APP_FIREBASE_STORAGE_BUCKET=
 REACT_APP_FIREBASE_SENDER_ID=
 REAC_APP_FIREBASE_ID=
+REACT_APP_FIREBASE_ID=
 REAC_APP_FIREBASE_MEASUREMENTID=
 ```
 

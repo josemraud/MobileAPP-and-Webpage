@@ -10,7 +10,7 @@ export const About  = () =>  {
     return (
       <Fragment>
         <MetaTags>
-          <title>Localiza HN | Nosotros</title>
+          <title>Plaza | Nosotros</title>
           <meta name="description" content="#" />
         </MetaTags>
         <Content/>

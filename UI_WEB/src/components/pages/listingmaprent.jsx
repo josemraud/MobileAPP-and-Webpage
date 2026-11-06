@@ -8,7 +8,7 @@ class Listingmaprent extends Component {
     return (
       <Fragment>
         <MetaTags>
-          <title>Localiza  | Renta de Bienes</title>
+          <title>Plaza  | Renta de Bienes</title>
           <meta name="description" content="#" />
         </MetaTags>
         <Header />
