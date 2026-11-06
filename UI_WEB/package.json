@@ -15,7 +15,7 @@
     "emailjs": "^3.4.0",
     "emailjs-com": "^2.6.4",
     "firebase": "^8.6.1",
-    "jquery": "^3.5.1",
+    "jquery": "^3.7.1",
     "jwt-decode": "^3.1.2",
     "leaflet": "^1.7.1",
     "leaflet.markercluster": "^1.4.1",

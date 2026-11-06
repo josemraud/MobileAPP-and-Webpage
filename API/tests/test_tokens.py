@@ -3,7 +3,7 @@ import json
 import os
 import unittest
 
-os.environ.setdefault('JWT_SECRET_KEY', 'test-secret')
+os.environ.setdefault('JWT_SECRET_KEY', 'test-secret-key-must-be-32b-min!!')
 
 from src.config import env_flag, env_int
 from src.shared.security.tokens import confirm_token, decode, employee_token, user_token
