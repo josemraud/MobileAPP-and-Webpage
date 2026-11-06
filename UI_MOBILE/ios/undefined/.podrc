@@ -1,7 +1,0 @@
-{
-    "root": "C:\\Users\\pepit\\Desktop\\AppRepository\\app\\ios\\pod",
-    "node_env": "development",
-    "default_script": "app.js",
-    "apps": {},
-    "web": {}
-}
